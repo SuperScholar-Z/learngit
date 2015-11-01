@@ -242,7 +242,7 @@ int main()
     
 }
 
-void gotoxy(int y,int x) //Dev c++没有gotoxy函数，这里定义此函数，不要问我里面的代码是什么东西，我也不知道。 
+void gotoxy(int y,int x)
 {
 	CONSOLE_SCREEN_BUFFER_INFO   csbiInfo;
 	HANDLE    hConsoleOut;
