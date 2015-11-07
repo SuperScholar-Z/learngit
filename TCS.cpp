@@ -95,28 +95,28 @@ int main()
             }
             if(t>5)
             {
-                if(c=='d')
+                if(c=='d' || c=='D')
                 {
                     food.x=head->x+1;
                     food.y=head->y;
                     if(food.x>=15)
                         food.x-=15;
                 }
-                else if(c=='a')
+                else if(c=='a' || c=='A')
                 {
                     food.x=head->x-1;
                     food.y=head->y;
                     if(food.x<0)
                         food.x+=15;
                 }
-                else if(c=='w')
+                else if(c=='w' || c=='W')
                 {
                     food.x=head->x;
                     food.y=head->y+1;
                     if(food.y>=15)
                         food.y-=15;
                 }
-                else if(c=='s')
+                else if(c=='s' || c=='S')
                 {
                     food.x=head->x;
                     food.y=head->y-1;
@@ -129,16 +129,19 @@ int main()
         if(kbhit())
         {
             c1=getch();
-            if(c1==27)
-                break;
+            if(c1=='P' || c1=='p')
+            {
+            	gotoxy(9,9);
+                system("pause");
+            }
             
-            if(c!='d' && c1=='a')
+            if(c!='d' && c!='D' && (c1=='a' || c1=='A'))
                 c=c1;
-            else if(c!='a' && c1=='d')
+            else if(c!='a' && c!='A' && (c1=='d' || c1=='D'))
                 c=c1;
-            else if(c!='w' && c1=='s')
+            else if(c!='w' && c!='W' && (c1=='s' || c1=='S'))
                 c=c1;
-            else if(c!='s' && c1=='w')
+            else if(c!='s' && c!='S' && (c1=='w' || c1=='W'))
                 c=c1;
         }
 
@@ -150,25 +153,25 @@ int main()
             pt=pt->pre;
         }
 
-        if(c=='d')
+        if(c=='d' || c=='D')
         {
             head->y+=1;
             if(head->y>=15)
                 head->y-=15;
         }
-        else if(c=='a')
+        else if(c=='a' || c=='A')
         {
             head->y-=1;
             if(head->y<0)
                 head->y+=15;
         }
-        else if(c=='w')
+        else if(c=='w' || c=='W')
         {
             head->x-=1;
             if(head->x<0)
                 head->x+=15;
         }
-        else if(c=='s')
+        else if(c=='s' || c=='S')
         {
             head->x+=1;
             if(head->x>=15)
